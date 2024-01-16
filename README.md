@@ -1,6 +1,12 @@
 # ecportfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+![Nuxt.js](https://img.shields.io/badge/Nuxt.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D)
+
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/jdasilvalima/ec-portfolio?style=for-the-badge)
+[![GitHub last commit](https://img.shields.io/github/last-commit/jdasilvalima/ec-portfolio?style=for-the-badge)](https://github.com/jdasilvalima/ec-portfolio/commits)
+
+## Project description
+**EcPortfolio** - is a website for a photographer.
 
 ## Recommended IDE Setup
 

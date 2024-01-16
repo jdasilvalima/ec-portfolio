@@ -1,23 +1,33 @@
-<script setup lang="ts">
+<script setup>
+import Lenis from "@studio-freight/lenis";
+import { onMounted } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+
+onMounted(() => {
+  scrollAnimation();
+})
+
+function scrollAnimation() {
+  const lenis = new Lenis({
+    duration: 1,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true
+  })
+
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+
+  requestAnimationFrame(raf)
+}
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <div id="wrapper">
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
