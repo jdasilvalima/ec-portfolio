@@ -3,6 +3,14 @@ import Lenis from "@studio-freight/lenis";
 import { onMounted } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 
+// Grid
+// Text showing
+// Gallery Grid
+// Image effect
+// Mouse
+// Footer
+// Header webGl
+
 onMounted(() => {
   scrollAnimation();
 })

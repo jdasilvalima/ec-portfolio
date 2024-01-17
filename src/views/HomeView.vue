@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import Home from '../components/Home.vue'
+import Header from '@/components/Home/Header.vue';
+import Introduction from '@/components/Home/Introduction.vue';
 </script>
 
 <template>
   <div class="test">
-    <Home />
-    <Home />
-    <Home />
-    <Home />
-    <Home />
+    <Header />
+    <Introduction />
+    <Header />
+    <Header />
+    <Header />
   </div>
 
 </template>
