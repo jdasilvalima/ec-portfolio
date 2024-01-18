@@ -1,5 +1,7 @@
 <script setup>
 import Lenis from "@studio-freight/lenis";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { onMounted } from 'vue';
 import { RouterLink, RouterView } from 'vue-router';
 
@@ -28,6 +30,8 @@ function scrollAnimation() {
   }
 
   requestAnimationFrame(raf)
+
+  gsap.registerPlugin(ScrollTrigger);
 };
 
 </script>
