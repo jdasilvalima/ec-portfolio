@@ -1,10 +1,10 @@
 <script setup>
 import Lenis from "@studio-freight/lenis";
-import { onMounted } from 'vue'
-import { RouterLink, RouterView } from 'vue-router'
+import { onMounted } from 'vue';
+import { RouterLink, RouterView } from 'vue-router';
 
+// Text showing > text showing when on screen + come back
 // Grid
-// Text showing
 // Gallery Grid
 // Image effect
 // Mouse
@@ -13,7 +13,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 onMounted(() => {
   scrollAnimation();
-})
+});
 
 function scrollAnimation() {
   const lenis = new Lenis({
@@ -28,7 +28,7 @@ function scrollAnimation() {
   }
 
   requestAnimationFrame(raf)
-}
+};
 
 </script>
 
