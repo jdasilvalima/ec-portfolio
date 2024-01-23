@@ -28,7 +28,7 @@ gsap
       trigger: '.about-section',
       start: 'top center',
       end: 'top center',
-      markers: true,
+      //markers: true,
     },
   })
   .from(
