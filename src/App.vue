@@ -6,7 +6,8 @@ import { onMounted } from 'vue';
 import { RouterLink, RouterView } from 'vue-router';
 
 // Text showing > text showing when on screen + come back
-// Grid
+// Grid > ok + verify responsive
+// text size and font
 // Gallery Grid
 // Image effect
 // Mouse

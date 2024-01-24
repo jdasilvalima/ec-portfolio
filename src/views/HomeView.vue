@@ -2,6 +2,7 @@
 import Header from '@/components/Home/Header.vue';
 import Introduction from '@/components/Home/Introduction.vue';
 import SmallGallery from '@/components/Home/SmallGallery.vue';
+import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
@@ -9,8 +10,7 @@ import SmallGallery from '@/components/Home/SmallGallery.vue';
     <Header />
     <Introduction />
     <SmallGallery />
-    <Header />
-    <Header />
+    <Footer />
   </div>
 
 </template>
