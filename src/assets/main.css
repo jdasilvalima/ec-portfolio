@@ -34,11 +34,25 @@ a,
   }
 } */
 
+@font-face {
+  font-family: 'Roboto-Thin';
+  src: url('./font/Roboto/Roboto-Thin.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Baron-Neue';
+  src: url('./font/Roboto/Baron Neue Black.otf') format('truetype');
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
-.html {
-  font-family: 'Roboto', sans-serif;
+body {
+  font-family: 'Roboto-Thin', sans-serif;
+}
+
+.title {
+  font-family: 'Baron-Neue', sans-serif;
 }

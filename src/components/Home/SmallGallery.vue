@@ -1,8 +1,8 @@
 <template>
   <div class="small-gallery">
     <div class="small-gallery-presentation">
-      <span>My pictures</span>
-      <span>Landscape / Portrait / Nature / Architecture</span>
+      <span class="title title-pictures">My pictures</span>
+      <span class="subtitle">Landscape / Portrait / Nature / Architecture</span>
     </div>
     <img class="image-one" src="https://images.unsplash.com/photo-1698426665412-4bf9ee4b510f?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image gallery one"/>
     <img class="image-two" src="https://images.unsplash.com/photo-1639762364576-2c780928e264?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image gallery two"/>
@@ -25,7 +25,6 @@
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 15px;
-  background-color: rgb(164, 164, 164);
   margin: 5rem 0rem;
 }
 
@@ -34,13 +33,21 @@ img {
   height: auto;
 }
 
+.title-pictures {
+  font-size: 1.5vw;
+  font-weight: 400;
+}
+
+.subtitle {
+  font-size: 2.8vw;
+}
+
 @media (min-width: 700px) {
   .small-gallery {
     display: grid;
     grid-template-columns: repeat(11,1fr);
     grid-template-rows: auto;
     row-gap: 0px;
-    background-color: rgb(229, 229, 229);
     margin: 5rem 10rem;
   }
   

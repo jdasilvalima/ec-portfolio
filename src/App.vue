@@ -10,8 +10,9 @@ import { RouterLink, RouterView } from 'vue-router';
 // text size and font
 // Gallery Grid
 // Image effect
+// https://tympanus.net/codrops/2020/03/17/create-a-wave-motion-effect-on-an-image-with-three-js/
 // Mouse
-// Footer
+// Footer > need to add link
 // Header webGl
 
 onMounted(() => {

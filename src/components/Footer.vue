@@ -3,11 +3,11 @@
     <hr>
     <div class="footer-content">
       <div class="footer-left">
-        <img src="../assets/icons/linkedin.png" width="30" alt="Logo LinkedIn">
-        <img src="../assets/icons/mail.png" width="30" alt="Logo E-mail">
+        <img src="../assets/icons/instagram.png" height="25" alt="Logo Instagram">
+        <img src="../assets/icons/mail.png" height="25" alt="Logo E-mail">
       </div>
       <div class="footer-right">
-        <p>© 2024 Images par Ernesto C.</p>
+        <p>© 2024 Images par <b>Ernesto C.</b></p>
       </div>
     </div>
   </footer>
@@ -16,8 +16,7 @@
 <style scoped>
 
 .footer-container {
-  background-color: #d6d6d6;
-  height: 5rem;
+  height: 6rem;
   margin: 0 10rem;
 }
 
@@ -31,14 +30,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 1.5rem;
 }
 
-.footer-left {
-  text-align: left;
+.footer-left img:first-child {
+  margin-right: 2rem;
 }
 
-.footer-right {
-  text-align: right;
+.footer-left img {
+  transition: transform 0.3s ease-in-out;
 }
+
+.footer-left img:hover {
+  transform: scale(1.2);
+}
+
 
 </style>
