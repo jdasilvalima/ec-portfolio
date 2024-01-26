@@ -17,7 +17,7 @@
 
 .footer-container {
   height: 6rem;
-  margin: 0 10rem;
+  margin: 0 2rem;
 }
 
 .hr {
@@ -43,6 +43,12 @@
 
 .footer-left img:hover {
   transform: scale(1.2);
+}
+
+@media (min-width: 700px) { 
+  .footer-container {
+    margin: 0 10rem;
+  }
 }
 
 

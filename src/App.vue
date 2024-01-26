@@ -11,6 +11,7 @@ import { RouterLink, RouterView } from 'vue-router';
 // Gallery Grid
 // Image effect
 // https://tympanus.net/codrops/2020/03/17/create-a-wave-motion-effect-on-an-image-with-three-js/
+// https://tympanus.net/codrops/2020/04/14/interactive-webgl-hover-effects/
 // Mouse
 // Footer > need to add link
 // Header webGl

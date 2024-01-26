@@ -49,6 +49,14 @@ a,
   padding: 0;
 }
 
+canvas { 
+	display: block; 
+	position: fixed;
+	z-index: -1;
+	left: 0; 
+	top: 0;
+}
+
 body {
   font-family: 'Roboto-Thin', sans-serif;
 }
