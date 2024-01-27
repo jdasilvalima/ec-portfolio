@@ -8,11 +8,11 @@ import ImageWaveEffect from '@/components/Home/ImageWaveEffect.vue';
 
 <template>
   <div class="test">
-    <!-- <ImageWaveEffect /> -->
-    <Header />
+    <ImageWaveEffect />
+    <!-- <Header />
     <Introduction />
     <SmallGallery />
-    <Footer />
+    <Footer /> -->
   </div>
 
 </template>
