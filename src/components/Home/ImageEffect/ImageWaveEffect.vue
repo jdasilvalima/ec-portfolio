@@ -16,6 +16,10 @@
 </template>
 
 <script setup>
+// https://www.youtube.com/watch?v=V8GnInBUMLo&ab_channel=ConorBailey
+// https://github.com/conorbailey90/RGB-Split-Hover-Effect/blob/main/js/app.js
+// nope : https://tympanus.net/codrops/2019/10/21/how-to-create-motion-hover-effects-with-image-distortions-using-three-js/
+
 import * as THREE from "three";
 import { onMounted, onUnmounted, ref } from 'vue';
 
