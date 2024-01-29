@@ -9,8 +9,8 @@ import ImageRgbEffect from '@/components/Home/ImageEffect/ImageRgbEffect.vue';
 
 <template>
   <div class="test">
-    <ImageRgbEffect />
-    <!-- <ImageWaveEffect /> -->
+    <!-- <ImageRgbEffect /> -->
+    <ImageWaveEffect />
     <!-- <Header />
     <Introduction />
     <SmallGallery />

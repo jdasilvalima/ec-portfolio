@@ -1,18 +1,19 @@
 <template>
-  <!-- <div class="image-effect">
-    <img class="js-image" width="700" src="@/assets/img/supaAmazingImage.jpg" alt="image gallery one"/>
-    <h2>Some title</h2>
-    <p>Lorem ipsum.</p>
-  </div> -->
-  <header class="header">
+  <!-- <header class="header">
     <h1 class="header__title">Interactive Hover Effects with Three.js</h1>
     <div class="info">
       TEST
     </div>
-    </header>
-    <div ref="imgContainerTest" id="imageContainer">
-      <img ref="imgTest" src="@/assets/img/supaAmazingImage.jpg" alt="Some image" id="myImage">
+  </header>
+  <div ref="imgContainerTest" id="imageContainer">
+    <img ref="imgTest" src="@/assets/img/supaAmazingImage.jpg" alt="Some image" id="myImage">
+  </div> -->
+
+  <main>
+    <div class="container">
+      <div class="image-container">TEST</div>
     </div>
+  </main>
 </template>
 
 <script setup>
@@ -22,162 +23,183 @@
 
 import * as THREE from "three";
 import { onMounted, onUnmounted, ref } from 'vue';
+import imageOne from '@/assets/img/1.jpeg';
+import imageTwo from '@/assets/img/2.jpeg';
 
-// variables
-const imageContainer = document.getElementById("imageContainer");
-const imageElement = document.getElementById("myImage");
-
-const imgTest = ref(null);
-const imgContainerTest = ref(null);
-
-let easeFactor = ref(0.02);
-let scene, camera, renderer, planeMesh;
-let mousePosition = ref({ x: 0.5, y: 0.5 });
-let targetMousePosition = ref({ x: 0.5, y: 0.5 });
-let mouseStopTimeout;
-let aberrationIntensity = ref(0.0);
-let lastPosition = ref({ x: 0.5, y: 0.5 });
-let prevPosition = ref({ x: 0.5, y: 0.5 });
+const images = {
+  imageOne,
+  imageTwo,
+}
 
 // shaders
-const vertexShader = `
-    varying vec2 vUv;
-    void main() {
-      vUv = uv;
-      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-    }
-`;
-
-const fragmentShader = `
+const vertex = `
+  uniform sampler2D uTexture;
+  uniform vec2 uOffset;
   varying vec2 vUv;
-  uniform sampler2D u_texture;    
-  uniform vec2 u_mouse;
-  uniform vec2 u_prevMouse;
-  uniform float u_aberrationIntensity;
 
-  void main() {
-    vec2 gridUV = floor(vUv * vec2(20.0, 20.0)) / vec2(20.0, 20.0);
-    vec2 centerOfPixel = gridUV + vec2(1.0/20.0, 1.0/20.0);
-    
-    vec2 mouseDirection = u_mouse - u_prevMouse;
-    
-    vec2 pixelToMouseDirection = centerOfPixel - u_mouse;
-    float pixelDistanceToMouse = length(pixelToMouseDirection);
-    float strength = smoothstep(0.3, 0.0, pixelDistanceToMouse);
+  float M_PI = 3.141529;
 
-    vec2 uvOffset = strength * - mouseDirection * 0.2;
-    vec2 uv = vUv - uvOffset;
+  vec3 deformationCurve(vec3 position, vec2 uv, vec2 offset){
+    position.x = position.x + (sin(uv.y * M_PI) * offset.x);
+    position.y = position.y + (sin(uv.x * M_PI) * offset.y);
+    return position;
+  }
 
-    vec4 colorR = texture2D(u_texture, uv + vec2(strength * u_aberrationIntensity * 0.01, 0.0));
-    vec4 colorG = texture2D(u_texture, uv);
-    vec4 colorB = texture2D(u_texture, uv - vec2(strength * u_aberrationIntensity * 0.01, 0.0));
-
-    gl_FragColor = vec4(colorR.r, colorG.g, colorB.b, 1.0);
+  void main(){
+    vUv = uv;
+    vec3 newPosition = deformationCurve(position, uv, uOffset);
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
   }
 `;
 
+const fragment = `
+  uniform sampler2D uTexture;
+  uniform float uAlpha;
+  uniform vec2 uOffset;
+  varying vec2 vUv;
+
+  vec3 rgbShift(sampler2D textureimage, vec2 uv, vec2 offset ){
+    float r = texture2D(textureimage, uv + offset).r;
+    vec2 gb = texture2D(textureimage, uv).gb;
+    return vec3(r, gb);
+  }
+
+  void main(){
+    // vec3 color = texture2D(uTexture, vUv).rgb;
+    vec3 color = rgbShift(uTexture, vUv, uOffset);
+    gl_FragColor = vec4(color, uAlpha);
+  }
+`;
+
+// smooth animation effect
+function lerp(start, end, t){
+  return start * ( 1 - t ) + end * t;
+}
+
+// mouse coordinates
+let targetX = ref(0);
+let targetY = ref(0);
+
+// load image textures for Mesh
+const textureOne = new THREE.TextureLoader().load(images.imageOne);
+const textureTwo = new THREE.TextureLoader().load(images.imageTwo);
+
+class WebGL{
+  constructor() {
+    this.container = document.querySelector('main');
+    this.links = [...document.querySelectorAll('.image-container')];
+
+    this.scene = new THREE.Scene();
+    this.perspective = 1000; // camera perspective / distance on the z axis
+    this.sizes = new THREE.Vector2(0,0); // mesh sizes
+    this.offset = new THREE.Vector2(0,0); // Positions of mesh on screen. Will be updated below.
+    this.uniforms = {
+      uTexture: {value: textureOne},
+      uAlpha: {value: 0.0},
+      uOffset: {value: new THREE.Vector2(0.0, 0.0)}
+    }
+
+    this.addEventListeners(document.querySelector('.container'));
+    this.setUpCamera();
+    this.onMouseMove();
+    this.createMesh();
+    this.render()
+  }
+
+  get viewport(){
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    let aspectRatio = width / height;
+
+    return{
+      width, 
+      height, 
+      aspectRatio
+    }
+  }
+
+  addEventListeners(element){
+    element.addEventListener('mouseenter', () => {
+      this.linkHovered = true;
+    })
+    element.addEventListener('mouseleave', () => {
+      this.linkHovered = false;
+    })
+  }
+
+  setUpCamera(){
+    window.addEventListener('resize', this.onWindowResize.bind(this))
+    
+    let fov = (180 * (2 * Math.atan(this.viewport.height / 2 / this.perspective))) / Math.PI;
+    this.camera = new THREE.PerspectiveCamera(fov, this.viewport.aspectRatio, 0.1, 1000);
+    this.camera.position.set(0, 0 , this.perspective);
+
+    this.renderer = new THREE.WebGL1Renderer({antialias: true,alpha: true });
+    this.renderer.setSize(this.viewport.width, this.viewport.height);
+    this.renderer.setPixelRatio(window.devicePixelRatio);
+    this.container.appendChild(this.renderer.domElement)
+  }
+
+  createMesh(){
+    this.geometry = new THREE.PlaneGeometry(1,1,20,20);
+    this.material = new THREE.ShaderMaterial({
+      uniforms: this.uniforms,
+      vertexShader: vertex,
+      fragmentShader: fragment,
+      transparent: true,
+      // wireframe: true,
+      // side: THREE.DoubleSide
+    })
+    this.mesh = new THREE.Mesh(this.geometry, this.material);
+    this.sizes.set(250, 350, 1);
+    this.mesh.scale.set(this.sizes.x, this.sizes.y, 1);
+
+    this.mesh.position.set(this.offset.x, this.offset.y, 0);
+    
+    this.scene.add(this.mesh);
+  }
+
+  onWindowResize(){
+    this.camera.aspect = this.viewport.aspectRatio;
+    this.camera.fov = (180 * (2 * Math.atan(this.viewport.height / 2 / this.perspective))) / Math.PI;
+    this.renderer.setSize(this.viewport.width, this.viewport.height);   
+    this.camera.updateProjectionMatrix();
+  }
+
+  onMouseMove(){
+    window.addEventListener('mousemove', (e) => {
+      targetX.value = e.clientX;
+      targetY.value = e.clientY;
+    })
+  }
+
+  render(){
+    this.offset.x = lerp(this.offset.x, targetX.value, 0.1);
+    this.offset.y = lerp(this.offset.y, targetY.value, 0.1);
+    this.uniforms.uOffset.value.set((targetX.value- this.offset.x) * 0.0005 , -(targetY.value- this.offset.y) * 0.0005 )
+    // this.mesh.scale.set(this.sizes.x, this.sizes.y)
+    this.mesh.position.set(this.offset.x - (window.innerWidth / 2)  , -this.offset.y + (window.innerHeight / 2), 0);
+
+    // set uAlpha when list is hovered / unhovered
+    this.linkHovered 
+    ? this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 1.0, 0.1) 
+    : this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 0.0, 0.1);
+    
+    for(let i = 0; i< this.links.length; i++){
+      if(this.linkHovered){
+        this.links[i].style.opacity = 0.2
+      }else{
+        this.links[i].style.opacity = 1
+      }
+    }
+    this.renderer.render(this.scene, this.camera);
+    window.requestAnimationFrame(this.render.bind(this));
+  }
+}
 
 onMounted(() => {
-  // use the existing image from html in the canvas
-  initializeScene(new THREE.TextureLoader().load(imgTest.value.src));
-
-  animateScene();
-
-  // event listeners
-  imgContainerTest.value.addEventListener("mousemove", handleMouseMove);
-  imgContainerTest.value.addEventListener("mouseenter", handleMouseEnter);
-  imgContainerTest.value.addEventListener("mouseleave", handleMouseLeave);
+  new WebGL();
 })
-
-function initializeScene(texture) {
-  //   scene creation
-  scene = new THREE.Scene();
-
-  // camera setup
-  camera = new THREE.PerspectiveCamera(
-    80,
-    imgTest.value.offsetWidth / imgTest.value.offsetHeight,
-    0.01,
-    10
-  );
-  camera.position.z = 1;
-
-  //   uniforms
-  let shaderUniforms = {
-    u_mouse: { type: "v2", value: new THREE.Vector2() },
-    u_prevMouse: { type: "v2", value: new THREE.Vector2() },
-    u_aberrationIntensity: { type: "f", value: 0.0 },
-    u_texture: { type: "t", value: texture }
-  };
-
-  //   creating a plane mesh with materials
-  planeMesh = new THREE.Mesh(
-    new THREE.PlaneGeometry(2, 2),
-    new THREE.ShaderMaterial({
-      uniforms: shaderUniforms,
-      vertexShader,
-      fragmentShader
-    })
-  );
-
-  //   add mesh to scene
-  scene.add(planeMesh);
-
-  //   render
-  renderer = new THREE.WebGLRenderer();
-  renderer.setSize(imgTest.value.offsetWidth, imgTest.value.offsetHeight);
-
-  //   create a canvas
-  imgContainerTest.value.appendChild(renderer.domElement);
-};
-
-function animateScene() {
-  requestAnimationFrame(animateScene);
-
-  mousePosition.value.x += (targetMousePosition.value.x - mousePosition.value.x) * easeFactor.value;
-  mousePosition.value.y += (targetMousePosition.value.y - mousePosition.value.y) * easeFactor.value;
-
-  planeMesh.material.uniforms.u_mouse.value.set(
-    mousePosition.value.x,
-    1.0 - mousePosition.value.y
-  );
-
-  planeMesh.material.uniforms.u_prevMouse.value.set(
-    prevPosition.value.x,
-    1.0 - prevPosition.value.y
-  );
-
-  aberrationIntensity.value = Math.max(0.0, aberrationIntensity.value - 0.05);
-
-  planeMesh.material.uniforms.u_aberrationIntensity.value = aberrationIntensity.value;
-
-  renderer.render(scene, camera);
-};
-
-function handleMouseMove(event) {
-  easeFactor.value = 0.02;
-  let rect = imgContainerTest.value.getBoundingClientRect();
-  prevPosition.value = { ...targetMousePosition.value };
-
-  targetMousePosition.value.x = (event.clientX - rect.left) / rect.width;
-  targetMousePosition.value.y = (event.clientY - rect.top) / rect.height;
-
-  aberrationIntensity.value = 1;
-}
-
-function handleMouseEnter(event) {
-  easeFactor.value = 0.02;
-  let rect = imgContainerTest.value.getBoundingClientRect();
-
-  mousePosition.value.x = targetMousePosition.value.x = (event.clientX - rect.left) / rect.width;
-  mousePosition.value.y = targetMousePosition.value.y = (event.clientY - rect.top) / rect.height;
-}
-
-function handleMouseLeave() {
-  easeFactor.value = 0.05;
-  targetMousePosition.value = { ...prevPosition.value };
-}
-
 </script>
 
 <style>
@@ -188,35 +210,5 @@ function handleMouseLeave() {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-canvas {
-  display: block;
-}
-
-#imageContainer {
-  position: relative;
-  width: 800px;
-  height: 800px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  max-width: 100%;
-  filter: saturate(0);
-  transition: all ease 0.5s;
-}
-
-#imageContainer:hover {
-  filter: saturate(100%);
-}
-
-#imageContainer > * {
-  position: absolute;
-  inset: 0;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover;
 }
 </style>

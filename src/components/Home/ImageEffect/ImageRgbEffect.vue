@@ -10,6 +10,9 @@
 </template>
 
 <script setup>
+// https://www.youtube.com/watch?v=V8GnInBUMLo&ab_channel=ConorBailey
+// https://github.com/conorbailey90/RGB-Split-Hover-Effect/blob/main/js/app.js
+
 import { ref, onMounted } from 'vue';
 import * as THREE from 'three';
 // import vertex from './ShadersVertex.glsl';
