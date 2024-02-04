@@ -1,8 +1,9 @@
 <template>
   <div class="small-gallery">
     <div class="small-gallery-presentation">
-      <span class="title title-pictures">My pictures</span>
+      <span class="title title-pictures">MY PICTURES</span>
       <span class="subtitle">Landscape / Portrait / Nature / Architecture</span>
+      <span class="separator"></span>
     </div>
     <img class="image-one" src="https://images.unsplash.com/photo-1698426665412-4bf9ee4b510f?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image gallery one"/>
     <img class="image-two" src="https://images.unsplash.com/photo-1639762364576-2c780928e264?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image gallery two"/>
@@ -34,12 +35,21 @@ img {
 }
 
 .title-pictures {
-  font-size: 1.5vw;
-  font-weight: 400;
+  font-size: 1.2vw;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .subtitle {
   font-size: 2.8vw;
+  font-weight: 100;
+  margin-bottom: 1rem;
+}
+
+.separator {
+  width: 20%;
+  height: 2px;
+  background-color: black;
 }
 
 @media (min-width: 700px) {
