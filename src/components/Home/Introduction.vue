@@ -7,54 +7,24 @@ onMounted(() => {
   const quoteText = new SplitType('.quote-text', { types: 'chars' });
   const quoteChars = quoteText.chars;
 
-  // gsap.fromTo(
-  //   quoteChars,
-  //   { 
-  //     y: 100,
-  //     opacity: 0
-  //   },
-  //   {
-  //     y: 0,
-  //     opacity: 1,
-  //     stagger: 0.05,
-  //     duration: 2,
-  //     ease: 'power4.out',
-  //   }
-  // )
-
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: '.about-section',
-      start: 'top center',
-      end: 'top center',
-      //markers: true,
-    },
-  })
-  .from(
-    quoteChars,
-    {
-      yPercent: 100,
-      stagger: 0.025,
-      duration: 0.6,
-      ease: 'power4.out',
-    },
-  )
-
-
-// gsap.to(quoteChars, {
-//   scrollTrigger: {
-//     trigger: ".about-section",
-//     start: "top center",
-//     end: "+=350px",
-//     scrub: 2, // true or seconds, depend if scroll or not
-//     markers: true, // visualize scroll, start and stop animation
-//   },
-//     x: 800,
-//     duration: 2
-//   });
-// })
-
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.about-section',
+        start: 'top center',
+        end: 'top center',
+        //markers: true,
+      },
+    })
+    .from(
+      quoteChars,
+      {
+        yPercent: 100,
+        stagger: 0.025,
+        duration: 0.6,
+        ease: 'power4.out',
+      },
+    )
 })
 
 </script>
@@ -80,7 +50,7 @@ gsap
 }
 .quote-text {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 4vw;
   line-height: 1.5;
 }
 
