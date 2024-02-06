@@ -1,9 +1,39 @@
+<script setup>
+import { onMounted } from 'vue';
+import SplitType from 'split-type';
+import { gsap } from 'gsap';
+
+onMounted(() => {
+  let galleryText = new SplitType('.gallery-text', { types: 'chars' });
+  let galleryChars = galleryText.chars;
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.small-gallery',
+        start: 'top 75%',
+        end: 'top 75%',
+        //markers: true,
+      },
+    })
+    .from(
+      galleryChars,
+      {
+        yPercent: 100,
+        stagger: 0.025,
+        duration: 1.5,
+        ease: 'power4.out',
+      },
+    )
+})
+</script>
+
 <template>
   <div class="small-gallery">
-    <div class="small-gallery-presentation">
-      <span class="title title-pictures">MY PICTURES</span>
-      <span class="subtitle">Landscape / Portrait / Nature / Architecture</span>
-      <span class="separator"></span>
+    <div class="small-gallery-presentation gallery-text">
+      <span class="title title-pictures gallery-text-char">MY PICTURES</span>
+      <span class="subtitle gallery-text-char">Landscape / Portrait</span>
+      <span class="subtitle gallery-text-char">/ Architecture</span>
     </div>
     <img class="image-one" src="https://images.unsplash.com/photo-1698426665412-4bf9ee4b510f?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image gallery one"/>
     <img class="image-two" src="https://images.unsplash.com/photo-1639762364576-2c780928e264?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image gallery two"/>
@@ -29,30 +59,47 @@
   margin: 5rem 2rem;
 }
 
+.small-gallery-presentation {
+  display: flex;
+  flex-direction: column;
+}
+
 img {
   width: 100%;
   height: auto;
 }
 
 .title-pictures {
-  font-size: 1.2vw;
+  font-size: 3.5vw;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .subtitle {
-  font-size: 2.8vw;
+  font-size: 7vw;
   font-weight: 100;
   margin-bottom: 1rem;
 }
 
-.separator {
+/* .separator {
   width: 20%;
   height: 2px;
   background-color: black;
+} */
+
+.gallery-text-char {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
+  .title-pictures {
+  font-size: 1.2vw;
+}
+
+.subtitle {
+  font-size: 2.8vw;
+}
+
   .small-gallery {
     display: grid;
     grid-template-columns: repeat(11,1fr);
@@ -64,8 +111,6 @@ img {
   .small-gallery-presentation {
     grid-column-start: 7;
     grid-column-end: 12;
-    display: flex;
-    flex-direction: column;
   }
   
   .image-one {

@@ -45,6 +45,10 @@
   transform: scale(1.2);
 }
 
+img {
+  cursor: pointer;
+}
+
 @media (min-width: 700px) { 
   .footer-container {
     margin: 0 10rem;

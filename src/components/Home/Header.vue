@@ -33,19 +33,30 @@ onMounted(() => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10rem;
 }
 
 h1 {
-  font-size: 7vw;
+  font-size: 10vw;
   line-height: 1.25;
 }
 
 h2 {
-  font-size: 3.6vw;
+  font-size: 6vw;
   font-weight: 100;
 }
 
 .header-texte-char {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+@media (min-width: 900px)  {
+  h1 {
+    font-size: 7vw;
+  }
+
+  h2 {
+    font-size: 3.6vw;
+  }
 }
 </style>
