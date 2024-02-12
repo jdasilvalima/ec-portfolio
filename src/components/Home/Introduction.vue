@@ -46,7 +46,7 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10rem;
+  margin-bottom: 13rem;
 }
 .quote-text {
   text-align: center;
@@ -56,9 +56,5 @@ onMounted(() => {
 
 .quote-texte-char {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-}
-
-@media (min-width: 900px)  {
-
 }
 </style>

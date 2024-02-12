@@ -91,14 +91,24 @@ img {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
-@media (min-width: 900px) {
+@media (min-width: 481px)  and (max-width: 961px)  {
   .title-pictures {
-  font-size: 1.2vw;
+    font-size: 2vw;
+  }
+
+  .subtitle {
+    font-size: 4vw;
+  }
 }
 
-.subtitle {
-  font-size: 2.8vw;
-}
+@media (min-width: 961px) {
+  .title-pictures {
+    font-size: 1.2vw;
+  }
+
+  .subtitle {
+    font-size: 2.8vw;
+  }
 
   .small-gallery {
     display: grid;

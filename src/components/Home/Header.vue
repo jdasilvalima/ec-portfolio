@@ -33,7 +33,7 @@ onMounted(() => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10rem;
+  margin-bottom: 13rem;
 }
 
 h1 {
@@ -50,13 +50,33 @@ h2 {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
-@media (min-width: 900px)  {
+@media (min-width: 481px)  and (max-width: 961px)  {
   h1 {
-    font-size: 7vw;
+    font-size: 12vw;
   }
 
   h2 {
-    font-size: 3.6vw;
+    font-size: 7vw;
+  }
+
+  .header-home{
+    min-height: 80vh;
+    margin-bottom: 5rem;
+  }
+}
+
+@media (max-width: 481px)  {
+  h1 {
+    font-size: 12vw;
+  }
+
+  h2 {
+    font-size: 7vw;
+  }
+
+  .header-home{
+    min-height: 80vh;
+    margin-bottom: 3rem;
   }
 }
 </style>
