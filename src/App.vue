@@ -4,7 +4,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { onMounted } from 'vue';
 import { RouterLink, RouterView } from 'vue-router';
-import Navbar from '@/components/Navbar.vue'
+import Navbar from '@/components/Navbar.vue';
+import Cursor from '@/components/Cursor.vue';
 
 // Text showing > text showing when on screen + come back
 // Grid > ok + verify responsive
@@ -42,6 +43,7 @@ function scrollAnimation() {
 
 <template>
   <div id="wrapper">
+    <Cursor/>
     <Navbar/>
     <RouterView />
   </div>

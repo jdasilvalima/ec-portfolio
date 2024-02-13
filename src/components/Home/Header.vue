@@ -37,12 +37,12 @@ onMounted(() => {
 }
 
 h1 {
-  font-size: 10vw;
+  font-size: 9vw;
   line-height: 1.25;
 }
 
 h2 {
-  font-size: 6vw;
+  font-size: 5vw;
   font-weight: 100;
 }
 
