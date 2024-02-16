@@ -43,12 +43,11 @@ function scrollAnimation() {
 
 <template>
   <div id="wrapper">
-    <Cursor/>
     <Navbar/>
+    <Cursor/>
     <RouterView />
   </div>
 </template>
 
 <style scoped>
-
 </style>

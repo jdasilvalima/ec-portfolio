@@ -7,7 +7,7 @@ import ImageWaveEffect from '@/components/Home/ImageWaveEffect.vue';
 </script>
 
 <template>
-  <div class="test">
+  <div class="home">
     <Header />
     <!-- <ImageWaveEffect /> -->
     <Introduction />
@@ -18,7 +18,7 @@ import ImageWaveEffect from '@/components/Home/ImageWaveEffect.vue';
 </template>
 
 <style scoped>
-.test {
+.home {
   display: flex;
   flex-direction: column;
 }
