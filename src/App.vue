@@ -44,7 +44,7 @@ function scrollAnimation() {
 <template>
   <div id="wrapper">
     <Navbar/>
-    <Cursor/>
+    <!-- <Cursor/> -->
     <RouterView />
   </div>
 </template>
