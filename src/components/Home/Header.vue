@@ -147,10 +147,10 @@ h2 {
 }
 
 @keyframes three {
-  0% { left: -20px; top: 0px }
-  25% { left: 15px; top: 30px }
-  50% { left: 35px; top: 75px }
-  75% { left: 50px; top: 150px }
-  100% { left: -20px; top: 0px }
+  0% { left: 150px; top: -150px }
+  25% { left: 200px; top: 30px }
+  50% { left: 300px; top: 75px }
+  75% { left: 200px; top: 150px }
+  100% { left: 150px; top: -150px }
 }
 </style>
