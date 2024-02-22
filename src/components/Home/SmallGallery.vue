@@ -35,17 +35,17 @@ onMounted(() => {
       <span class="subtitle gallery-text-char">Landscape / Portrait</span>
       <span class="subtitle gallery-text-char">/ Architecture</span>
     </div>
-    <img class="image-one" src="https://images.unsplash.com/photo-1698426665412-4bf9ee4b510f?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image gallery one"/>
-    <img class="image-two" src="https://images.unsplash.com/photo-1639762364576-2c780928e264?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image gallery two"/>
-    <img class="image-three" src="https://images.unsplash.com/photo-1620408583014-251b06dca892?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image gallery three"/>
-    <img class="image-four" src="https://images.unsplash.com/photo-1699492583823-a087cfa72173?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image gallery four"/>
-    <img class="image-five" src="https://images.unsplash.com/photo-1688151049003-7547bb8fdd4f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image gallery five"/>
-    <img class="image-six" src="https://images.unsplash.com/photo-1688150711771-51869eb07cad?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image gallery six"/>
-    <img class="image-seven" src="https://images.unsplash.com/photo-1688150711771-51869eb07cad?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image gallery seven"/>
-    <img class="image-eight" src="https://images.unsplash.com/photo-1625071185882-500c3b593b86?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image gallery eight"/>
-    <img class="image-nine" src="https://images.unsplash.com/photo-1699492583842-a6337c1502ca?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image gallery nine"/>
-    <img class="image-ten" src="https://images.unsplash.com/photo-1620408583338-f4aaebf5b82a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image gallery ten"/>
-    <img class="image-eleven" src="https://images.unsplash.com/photo-1639762364576-2c780928e264?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image gallery eleven"/>
+    <img class="image-one" src="../../assets/img/ec/1.jpg" alt="image gallery one"/>
+    <img class="image-two" src="../../assets/img/ec/2.jpg" alt="image gallery two"/>
+    <img class="image-three" src="../../assets/img/ec/3.jpg" alt="image gallery three"/>
+    <img class="image-four" src="../../assets/img/ec/4.jpg" alt="image gallery four"/>
+    <img class="image-five" src="../../assets/img/ec/5.jpg" alt="image gallery five"/>
+    <img class="image-six" src="../../assets/img/ec/6.jpg" alt="image gallery six"/>
+    <img class="image-seven" src="../../assets/img/ec/7.jpg" alt="image gallery seven"/>
+    <img class="image-eight" src="../../assets/img/ec/8.jpg" alt="image gallery eight"/>
+    <img class="image-nine" src="../../assets/img/ec/9.jpg" alt="image gallery nine"/>
+    <img class="image-ten" src="../../assets/img/ec/10.jpg" alt="image gallery ten"/>
+    <img class="image-eleven" src="../../assets/img/ec/11.jpg" alt="image gallery eleven"/>
     <img class="image-twelve" src="https://images.unsplash.com/photo-1625071185894-3a09888c3f92?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image gallery twelve"/>
   </div>
 </template>
