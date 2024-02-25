@@ -46,7 +46,7 @@ onMounted(() => {
     <img class="image-nine" src="../../assets/img/ec/9.jpg" alt="image gallery nine"/>
     <img class="image-ten" src="../../assets/img/ec/10.jpg" alt="image gallery ten"/>
     <img class="image-eleven" src="../../assets/img/ec/11.jpg" alt="image gallery eleven"/>
-    <img class="image-twelve" src="https://images.unsplash.com/photo-1625071185894-3a09888c3f92?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image gallery twelve"/>
+    <img class="image-twelve" src="../../assets/img/ec/12.jpg" alt="image gallery twelve"/>
   </div>
 </template>
 
