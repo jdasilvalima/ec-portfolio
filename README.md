@@ -5,14 +5,28 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/jdasilvalima/ec-portfolio?style=for-the-badge)
 [![GitHub last commit](https://img.shields.io/github/last-commit/jdasilvalima/ec-portfolio?style=for-the-badge)](https://github.com/jdasilvalima/ec-portfolio/commits)
 
-## Project description
-**EcPortfolio** - is a website for a photographer.
+## I. PROJECT DESCRIPTION
+### I.1 Introduction
+**EcPortfolio** - is a website to showcase a photographer's work.
 
-## Recommended IDE Setup
+### I.2 Goals
+The goal for this project was to create an interactive website while deepening my knowledge of modern frontend tools and techniques :
+
+- Enhance frontend development skills using [Nuxt.js](https://nuxt.com/).
+- Explore smooth scrolling techniques with [Lenis](https://lenis.darkroom.engineering/).
+- Implement dynamic animations with [GSAP](https://gsap.com/) to create an engaging user experience.
+
+## II. PROJECT SETUP
+### II.1 Requirements
+- [Node.js](https://nodejs.org/en/) needs to be installed.
+- A package manager, such as npm or yarn, is required.
+
+
+### II.2 Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Type Support for `.vue` Imports in TS
+**Type Support for `.vue` Imports in TS**
 
 TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 
@@ -23,11 +37,11 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
     2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
 2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
 
-## Customize configuration
+**Customize configuration**
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+### II.3 Project Setup
 
 ```sh
 npm install
@@ -45,30 +59,13 @@ npm run dev
 npm run build
 ```
 
-### Run Headed Component Tests with [Cypress Component Testing](https://on.cypress.io/component)
-
-```sh
-npm run test:unit:dev # or `npm run test:unit` for headless testing
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
 npm run lint
 ```
+
+## III. APPLICATION ARCHITECTURE
+The following schema illustrates how the components in the application are interconnected and their hierarchical relationships.
+
+![FrontEnd Architecture](./readme-doc/fe-architecture.png)
