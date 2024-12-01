@@ -27,9 +27,7 @@ onMounted(() => {
   </div>
   
   <div class="background">
-    <div class="bg-shape1 shape"></div>
-    <div class="bg-shape2 shape"></div>
-    <div class="bg-shape3 shape"></div>
+
   </div>
   
 
@@ -96,61 +94,5 @@ h2 {
   justify-content: center;
   position: absolute;
   z-index: -1;
-}
-
-.bg-shape1 {
-  width: 400px;
-  height: 400px;
-  border-radius: 9999px;
-  position: relative;
-  animation: one 10s infinite;
-  background-color: #29ADB2;
-}
-
-
-.bg-shape2 {
-  width: 300px;
-  height: 300px;
-  border-radius: 9999px;
-  position: relative;
-  animation: two 10s infinite;
-  background-color: #C5E898;
-}
-
-.bg-shape3 {
-  width: 400px;
-  height: 400px;
-  border-radius: 9999px;
-  position: relative;
-  animation: three 10s infinite;
-  background-color: #0766AD;
-}
-.shape {
-  opacity: .5;
-  filter: blur(90px);
-}
-
-@keyframes one {
-  0% { left: 0px; top: 0px }
-  25% { left: -100px; top: 70px }
-  50% { left: 20px; top: 150px }
-  75% { left: 50px; top: 100px }
-  100% { left: 0px; top: 0px }
-}
-
-@keyframes two {
-  0% { left: 0px; top: 0px }
-  25% { left: 50px; top: 10px }
-  50% { left: 100px; top: 50px }
-  75% { left: 50px; top: 100px }
-  100% { left: 0px; top: 0px }
-}
-
-@keyframes three {
-  0% { left: 150px; top: -150px }
-  25% { left: 200px; top: 30px }
-  50% { left: 300px; top: 75px }
-  75% { left: 200px; top: 150px }
-  100% { left: 150px; top: -150px }
 }
 </style>
