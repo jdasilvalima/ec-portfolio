@@ -1,7 +1,10 @@
 <script setup>
-import { onMounted } from 'vue';
+import ShaderBackground from '@/components/Home/ShaderBackground.vue';
+import { onMounted, ref } from "vue";
 import SplitType from 'split-type';
 import { gsap } from 'gsap';
+
+const grainCanvas = ref(null);
 
 onMounted(() => {
   let headerText = new SplitType('.header-text', { types: 'chars' });
@@ -26,11 +29,8 @@ onMounted(() => {
     <h2 class="header-texte-char">PHOTOGRAPHER</h2>
   </div>
   
-  <div class="background">
-
-  </div>
+  <ShaderBackground />
   
-
 </template>
 
 <style scoped>
@@ -89,10 +89,12 @@ h2 {
 
 /*css morphing*/
 .background {
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: center;
-  position: absolute;
-  z-index: -1;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(120deg, #f08d49, #ffb77a, #8bc6ec, #4bacc6);
+  background-size: 400% 400%;
+  animation: gradient-shift 8s ease infinite;
 }
 </style>

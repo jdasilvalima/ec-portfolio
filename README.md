@@ -69,3 +69,16 @@ npm run lint
 The following schema illustrates how the components in the application are interconnected and their hierarchical relationships.
 
 ![FrontEnd Architecture](./readme-doc/fe-architecture.png)
+
+
+## IV. REFERENCES
+### IV.1 Mesh Gradiant
+* [The Book of Shaders - Noise](https://thebookofshaders.com/11/)
+* [Gradient Flow](https://www.shadertoy.com/view/wdyczG)
+* [Whatamesh](https://whatamesh.vercel.app/)
+* [Canva & EventListener](https://codepen.io/wiz_amit/pen/JjGRZjJ)
+* [CSS Morphing Gradients Animated Background](https://www.youtube.com/watch?v=Ml-B-W91gtw&ab_channel=WeCoded)
+* [UVcanvas](https://uvcanvas.com/)
+* [Noise & Gradient](https://www.noiseandgradient.com/?chaos=0.2&colors=%23ed625d-%2342b6c6-%23f79f88-%23b2dfe6-%2303232d-%23ffffff&grain=0.15)
+
+https://medium.com/design-bootcamp/moving-mesh-gradient-background-with-stripe-mesh-gradient-webgl-package-6dc1c69c4fa2
