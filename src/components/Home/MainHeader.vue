@@ -28,9 +28,9 @@ onMounted(() => {
     <h1 class="title header-texte-char">ERNESTO C.</h1>
     <h2 class="header-texte-char">PHOTOGRAPHER</h2>
   </div>
-  
+
   <ShaderBackground />
-  
+
 </template>
 
 <style scoped>

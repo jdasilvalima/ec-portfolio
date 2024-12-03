@@ -15,6 +15,7 @@ The goal for this project was to create an interactive website while deepening m
 - Enhance frontend development skills using [Nuxt.js](https://nuxt.com/).
 - Explore smooth scrolling techniques with [Lenis](https://lenis.darkroom.engineering/).
 - Implement dynamic animations with [GSAP](https://gsap.com/) to create an engaging user experience.
+- Get started with [WebGL](https://webgl2fundamentals.org/) and [Three.js](https://threejs.org/) to explore 3D web graphics
 
 ## II. PROJECT SETUP
 ### II.1 Requirements
@@ -81,4 +82,6 @@ The following schema illustrates how the components in the application are inter
 * [UVcanvas](https://uvcanvas.com/)
 * [Noise & Gradient](https://www.noiseandgradient.com/?chaos=0.2&colors=%23ed625d-%2342b6c6-%23f79f88-%23b2dfe6-%2303232d-%23ffffff&grain=0.15)
 
-https://medium.com/design-bootcamp/moving-mesh-gradient-background-with-stripe-mesh-gradient-webgl-package-6dc1c69c4fa2
+### IV.2 WebGL
+* [Learn WebGL](https://learnwebgl.brown37.net/)
+* [Shadertoy](https://www.shadertoy.com/)

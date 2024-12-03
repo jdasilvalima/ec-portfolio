@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Header from '@/components/Home/Header.vue';
+import Header from '@/components/Home/MainHeader.vue';
 import Introduction from '@/components/Home/Introduction.vue';
 import SmallGallery from '@/components/Home/SmallGallery.vue';
 import Footer from '@/components/Footer.vue';
