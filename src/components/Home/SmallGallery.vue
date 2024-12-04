@@ -116,6 +116,7 @@ img {
     grid-template-rows: auto;
     row-gap: 0px;
     margin: 5rem 10rem;
+    z-index: 1;
   }
   
   .small-gallery-presentation {
@@ -128,7 +129,7 @@ img {
     grid-column-end: 6;
     grid-row-start: 1;
     grid-row-end: 2;
-    z-index: 1;
+    z-index: 2;
   }
   
   .image-two {
@@ -161,7 +162,7 @@ img {
     grid-row-start: 5;
     grid-row-end: 6;
     margin-top: -10rem;
-    z-index: 1;
+    z-index: 2;
   }
   
   .image-six {
@@ -186,7 +187,7 @@ img {
     grid-row-start: 8;
     grid-row-end: 9;
     margin-top: -10rem;
-    z-index: 1;
+    z-index: 2;
   }
   
   .image-nine {
@@ -195,7 +196,7 @@ img {
     grid-row-start: 9;
     grid-row-end: 10;
     margin-top: -20rem;
-    z-index: 1;
+    z-index: 2;
   }
   
   .image-ten {
@@ -212,7 +213,7 @@ img {
     grid-row-start: 11;
     grid-row-end: 12;
     margin-top: 8rem;
-    z-index: 1;
+    z-index: 2;
   }
   
   .image-twelve {

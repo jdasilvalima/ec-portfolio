@@ -3,11 +3,13 @@ import Header from '@/components/Home/MainHeader.vue';
 import Introduction from '@/components/Home/Introduction.vue';
 import SmallGallery from '@/components/Home/SmallGallery.vue';
 import Footer from '@/components/Footer.vue';
+import MouseCircle from '@/components/Home/MouseCircle.vue';
 import ImageWaveEffect from '@/components/Home/ImageWaveEffect.vue';
 </script>
 
 <template>
   <div class="home">
+    <MouseCircle />
     <Header />
     <!-- <ImageWaveEffect /> -->
     <Introduction />
