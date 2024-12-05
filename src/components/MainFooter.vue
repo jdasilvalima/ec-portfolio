@@ -14,10 +14,13 @@
 </template>
 
 <style scoped>
+footer {
+  z-index: 1;
+}
 
 .footer-container {
   height: 6rem;
-  margin: 0 2rem;
+  width: 100%;
 }
 
 .hr {
@@ -47,12 +50,6 @@
 
 img {
   cursor: pointer;
-}
-
-@media (min-width: 700px) { 
-  .footer-container {
-    margin: 0 10rem;
-  }
 }
 
 

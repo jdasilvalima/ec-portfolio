@@ -56,7 +56,7 @@ onMounted(() => {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 15px;
-  margin: 5rem 2rem;
+  margin: 5rem 0rem;
 }
 
 .small-gallery-presentation {
@@ -115,7 +115,6 @@ img {
     grid-template-columns: repeat(11,1fr);
     grid-template-rows: auto;
     row-gap: 0px;
-    margin: 5rem 10rem;
     z-index: 1;
   }
   

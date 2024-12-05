@@ -8,5 +8,7 @@
 <style scoped>
 .navbar {
   margin: 2rem;
+  position: relative;
+  z-index: 1;
 }
 </style>

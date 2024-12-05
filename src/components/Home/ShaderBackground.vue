@@ -75,7 +75,7 @@ const fragmentShader = `
     // Wave modification
     float frequency = 5.0;
     float amplitude = 80.0;
-    float speed = iTime * 0.2;
+    float speed = iTime * 0.09;
     tuv.x += sin(tuv.y * frequency + speed) / amplitude;
     tuv.y += sin(tuv.x * frequency * 1.5 + speed) / (amplitude * 0.5);
     
@@ -90,7 +90,7 @@ const fragmentShader = `
     
     vec3 finalComp = mix(layer1, layer2, S(0.5, -0.3, tuv.y));
     
-    gl_FragColor = vec4(finalComp, 1.0);
+    gl_FragColor = vec4(finalComp, 0.9);
   }
 `
 

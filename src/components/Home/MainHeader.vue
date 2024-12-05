@@ -1,5 +1,5 @@
 <script setup>
-import ShaderBackground from '@/components/Home/ShaderBackground.vue';
+
 import { onMounted, ref } from "vue";
 import SplitType from 'split-type';
 import { gsap } from 'gsap';
@@ -23,14 +23,10 @@ onMounted(() => {
 </script>
 
 <template>
-
   <div class="header-home header-text">
     <h1 class="title header-texte-char">ERNESTO C.</h1>
     <h2 class="header-texte-char">PHOTOGRAPHER</h2>
   </div>
-
-  <ShaderBackground />
-
 </template>
 
 <style scoped>
@@ -44,7 +40,7 @@ onMounted(() => {
 }
 
 h1 {
-  font-size: 9vw;
+  font-size: 8.5vw;
   line-height: 1.25;
 }
 
@@ -85,16 +81,5 @@ h2 {
     min-height: 80vh;
     margin-bottom: 3rem;
   }
-}
-
-/*css morphing*/
-.background {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background: linear-gradient(120deg, #f08d49, #ffb77a, #8bc6ec, #4bacc6);
-  background-size: 400% 400%;
-  animation: gradient-shift 8s ease infinite;
 }
 </style>

@@ -46,15 +46,30 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 13rem;
+  margin-bottom: 15rem;
 }
+
 .quote-text {
   text-align: center;
-  font-size: 4vw;
+  font-size: 2.7vw;
   line-height: 1.5;
 }
 
 .quote-texte-char {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+@media (min-width: 481px)  and (max-width: 961px)  {
+  .quote-text {
+    font-size: 3.5vw;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 481px)  {
+  .quote-text {
+    font-size: 4vw;
+    line-height: 2;
+  }
 }
 </style>
