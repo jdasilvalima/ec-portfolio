@@ -16,7 +16,7 @@ import ShaderBackground from '@/components/Home/ShaderBackground.vue';
     </div>
     <div class="home">
       <Header />
-      <!-- <ImageWaveEffect /> -->
+      <!-- <ImageWaveEffect/> -->
       <Introduction />
       <SmallGallery />
       <Footer />

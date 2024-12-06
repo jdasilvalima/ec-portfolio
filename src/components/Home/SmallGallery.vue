@@ -35,18 +35,18 @@ onMounted(() => {
       <span class="subtitle gallery-text-char">Landscape / Portrait</span>
       <span class="subtitle gallery-text-char">/ Architecture</span>
     </div>
-    <img class="image-one" src="../../assets/img/ec/1.jpg" alt="image gallery one"/>
-    <img class="image-two" src="../../assets/img/ec/2.jpg" alt="image gallery two"/>
-    <img class="image-three" src="../../assets/img/ec/3.jpg" alt="image gallery three"/>
-    <img class="image-four" src="../../assets/img/ec/4.jpg" alt="image gallery four"/>
-    <img class="image-five" src="../../assets/img/ec/5.jpg" alt="image gallery five"/>
-    <img class="image-six" src="../../assets/img/ec/6.jpg" alt="image gallery six"/>
-    <img class="image-seven" src="../../assets/img/ec/7.jpg" alt="image gallery seven"/>
-    <img class="image-eight" src="../../assets/img/ec/8.jpg" alt="image gallery eight"/>
-    <img class="image-nine" src="../../assets/img/ec/9.jpg" alt="image gallery nine"/>
-    <img class="image-ten" src="../../assets/img/ec/10.jpg" alt="image gallery ten"/>
-    <img class="image-eleven" src="../../assets/img/ec/11.jpg" alt="image gallery eleven"/>
-    <img class="image-twelve" src="../../assets/img/ec/12.jpg" alt="image gallery twelve"/>
+    <img class="image-1" src="@/assets/img/ec/1.jpg" alt="image gallery 1"/>
+    <img class="image-2" src="@/assets/img/ec/2.jpg" alt="image gallery 2"/>
+    <img class="image-3" src="@/assets/img/ec/3.jpg" alt="image gallery 3"/>
+    <img class="image-4" src="@/assets/img/ec/4.jpg" alt="image gallery 4"/>
+    <img class="image-5" src="@/assets/img/ec/5.jpg" alt="image gallery 5"/>
+    <img class="image-6" src="@/assets/img/ec/6.jpg" alt="image gallery 6"/>
+    <img class="image-7" src="@/assets/img/ec/7.jpg" alt="image gallery 7"/>
+    <img class="image-8" src="@/assets/img/ec/8.jpg" alt="image gallery 8"/>
+    <img class="image-9" src="@/assets/img/ec/9.jpg" alt="image gallery 9"/>
+    <img class="image-10" src="@/assets/img/ec/10.jpg" alt="image gallery 10"/>
+    <img class="image-11" src="@/assets/img/ec/11.jpg" alt="image gallery 11"/>
+    <img class="image-12" src="@/assets/img/ec/12.jpg" alt="image gallery 12"/>
   </div>
 </template>
 
@@ -123,7 +123,7 @@ img {
     grid-column-end: 12;
   }
   
-  .image-one {
+  .image-1 {
     grid-column-start: 1;
     grid-column-end: 6;
     grid-row-start: 1;
@@ -131,7 +131,7 @@ img {
     z-index: 2;
   }
   
-  .image-two {
+  .image-2 {
     grid-column-start: 5;
     grid-column-end: 12;
     grid-row-start: 2;
@@ -139,7 +139,7 @@ img {
     margin-top: -2rem;
   }
   
-  .image-three {
+  .image-3 {
     grid-column-start: 1;
     grid-column-end: 8;
     grid-row-start: 3;
@@ -147,7 +147,7 @@ img {
     padding-top: 4rem;
   }
   
-  .image-four {
+  .image-4 {
     grid-column-start: 7;
     grid-column-end: 12;
     grid-row-start: 4;
@@ -155,7 +155,7 @@ img {
     margin-top: -2rem;
   }
   
-  .image-five {
+  .image-5 {
     grid-column-start: 1;
     grid-column-end: 6;
     grid-row-start: 5;
@@ -164,7 +164,7 @@ img {
     z-index: 2;
   }
   
-  .image-six {
+  .image-6 {
     grid-column-start: 5;
     grid-column-end: 12;
     grid-row-start: 6;
@@ -172,7 +172,7 @@ img {
     margin-top: -10rem;
   }
   
-  .image-seven {
+  .image-7 {
     grid-column-start: 5;
     grid-column-end: 12;
     grid-row-start: 7;
@@ -180,7 +180,7 @@ img {
     margin-top: 8rem;
   }
   
-  .image-eight {
+  .image-8 {
     grid-column-start: 1;
     grid-column-end: 6;
     grid-row-start: 8;
@@ -189,7 +189,7 @@ img {
     z-index: 2;
   }
   
-  .image-nine {
+  .image-9 {
     grid-column-start: 7;
     grid-column-end: 12;
     grid-row-start: 9;
@@ -198,7 +198,7 @@ img {
     z-index: 2;
   }
   
-  .image-ten {
+  .image-10 {
     grid-column-start: 1;
     grid-column-end: 8;
     grid-row-start: 10;
@@ -206,7 +206,7 @@ img {
     margin-top: -8rem;
   }
   
-  .image-eleven {
+  .image-11 {
     grid-column-start: 5;
     grid-column-end: 12;
     grid-row-start: 11;
@@ -215,7 +215,7 @@ img {
     z-index: 2;
   }
   
-  .image-twelve {
+  .image-12 {
     grid-column-start: 1;
     grid-column-end: 6;
     grid-row-start: 12;
