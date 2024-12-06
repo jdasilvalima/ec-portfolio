@@ -10,8 +10,10 @@ import ShaderBackground from '@/components/Home/ShaderBackground.vue';
 
 <template>
   <div>
-    <MouseCircle class="mouse-circle"/>
-    <ShaderBackground />
+    <div class="desk-effect">
+      <MouseCircle/>
+      <ShaderBackground />
+    </div>
     <div class="home">
       <Header />
       <!-- <ImageWaveEffect /> -->
@@ -33,12 +35,12 @@ import ShaderBackground from '@/components/Home/ShaderBackground.vue';
   padding: 0 2rem;
 }
 
-.mouse-circle {
+.desk-effect {
   display: block;
 }
 
-@media (max-width: 1024px) {
-  .mouse-circle {
+@media (max-width: 1020px) {
+  .desk-effect {
     display: none;
   }
 }

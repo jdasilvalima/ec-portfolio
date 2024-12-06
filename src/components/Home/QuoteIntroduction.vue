@@ -51,7 +51,7 @@ onMounted(() => {
 
 .quote-text {
   text-align: center;
-  font-size: 2.7vw;
+  font-size: 2.5vw;
   line-height: 1.5;
 }
 
@@ -68,7 +68,7 @@ onMounted(() => {
 
 @media (max-width: 481px)  {
   .quote-text {
-    font-size: 4vw;
+    font-size: 4.2vw;
     line-height: 2;
   }
 }

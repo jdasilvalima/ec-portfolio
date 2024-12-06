@@ -31,21 +31,20 @@ onMounted(() => {
 
 <style scoped>
 .header-home{
-  min-height: 70vh;
+  min-height: calc(100vh - 6rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 13rem;
 }
 
 h1 {
-  font-size: 8.5vw;
+  font-size: 8vw;
   line-height: 1.25;
 }
 
 h2 {
-  font-size: 5vw;
+  font-size: 4vw;
   font-weight: 100;
 }
 
@@ -61,11 +60,6 @@ h2 {
   h2 {
     font-size: 7vw;
   }
-
-  .header-home{
-    min-height: 80vh;
-    margin-bottom: 5rem;
-  }
 }
 
 @media (max-width: 481px)  {
@@ -75,11 +69,6 @@ h2 {
 
   h2 {
     font-size: 7vw;
-  }
-
-  .header-home{
-    min-height: 80vh;
-    margin-bottom: 3rem;
   }
 }
 </style>
