@@ -4,7 +4,7 @@ import Introduction from '@/components/Home/QuoteIntroduction.vue';
 import SmallGallery from '@/components/Home/SmallGallery.vue';
 import Footer from '@/components/MainFooter.vue';
 import MouseCircle from '@/components/Home/MouseCircle.vue';
-import ImageWaveEffect from '@/components/Home/ImageWaveEffect.vue';
+import ImageDistortion from '@/components/Home/ImageDistortion.vue';
 import ShaderBackground from '@/components/Home/ShaderBackground.vue';
 </script>
 
@@ -16,7 +16,7 @@ import ShaderBackground from '@/components/Home/ShaderBackground.vue';
     </div>
     <div class="home">
       <Header />
-      <!-- <ImageWaveEffect/> -->
+      <!-- <ImageDistortion/> -->
       <Introduction />
       <SmallGallery />
       <Footer />
